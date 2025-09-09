@@ -135,3 +135,5 @@ with open("nomes.txt", "r") as arquivo:
     conteudo = arquivo.read()
     print("Nome dos alunos:")
     print(conteudo)
+
+#Exercicio 10
