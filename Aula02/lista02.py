@@ -80,3 +80,58 @@ aluno = {
     "curso": "Sistemas de Informação"
 }
 print(f"Nome: {aluno['nome']}, Idade: {aluno['idade']}, Curso: {aluno['curso']}")
+
+'''Exercício 06
+Peça para o usuário digitar 10 números (pode repetir). 
+• Armazene-os em um conjunto; 
+• Mostre quais números foram digitados sem repetição. '''
+
+numeros = set()
+for i in range(10):
+    num = int(input("Digite um número: "))
+    numeros.add(num)
+print("Números digitados sem repetição:", numeros)
+
+'''exercício 7
+Escreva uma função que receba a base e a altura de um triângulo e retorne sua área. 
+'''
+
+def calcularArea(a, b):
+    return (a*b)/2
+
+altura = int(input("Digite a altura do triângulo:"))
+base = int(input("Digite a base do triângulo:"))
+
+resultado = calcularArea(altura,base)
+
+print(f"Área do triângulo: {resultado}")
+
+'''
+Exercício 08
+Escreva uma função que receba uma lista de números e retorne apenas os números pares. 
+'''
+def definirPar(lista, TamLista):
+    pares = []
+    for i in range(TamLista):
+        if lista[i] % 2 == 0:
+            pares.append(lista[i])
+    return pares    
+
+lista = [1,2,3,4,5,6,7,8,9,10]
+tamLista = len(lista)
+resultado = definirPar(lista, tamLista)
+
+print("Números pares na lista:", resultado)
+
+with open("nomes.txt", "a") as arquivo:
+    while True:
+        nomeAluno = input("Digite o nome de um aluno:")
+        if nomeAluno == "fim":
+            break
+        arquivo.write(nomeAluno + "\n")
+print("Nomes salvos com sucesso!")
+
+with open("nomes.txt", "r") as arquivo:
+    conteudo = arquivo.read()
+    print("Nome dos alunos:")
+    print(conteudo)
